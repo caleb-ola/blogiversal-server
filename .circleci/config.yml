@@ -25,7 +25,7 @@ jobs:
 
   build_docker_image:
     docker:
-      - image: docker:14
+      - image: docker:20
 
     steps:
       - checkout
@@ -41,7 +41,7 @@ jobs:
 
   deploy:
     docker:
-      - image: docker:14
+      - image: docker:20
 
     working_directory: ~/app
 
