@@ -36,7 +36,6 @@ jobs:
       - run:
           name: Build Docker Image
           command: |
-            cd /workspace
             docker build -t blogiversal-server .
 
   deploy:
