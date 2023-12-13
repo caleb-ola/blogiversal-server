@@ -31,13 +31,13 @@ jobs:
       - checkout
 
       - attach_workspace:
-          at: /workspace
+          at: /
 
       - run:
           name: Build Docker Image
           command: |
             cd /workspace
-            docker build -t blogiversal-server
+            docker build -t blogiversal-server .
 
   deploy:
     docker:
