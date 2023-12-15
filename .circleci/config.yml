@@ -34,6 +34,10 @@ jobs:
           at: /
 
       - run:
+          name: Docker start
+          command:
+
+      - run:
           name: Build Docker Image
           command: |
             docker build -t blogiversal-server .
