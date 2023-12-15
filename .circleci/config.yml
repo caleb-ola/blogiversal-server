@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/node:14
+      - image: cimg/go:1.17
 
     working_directory: ~/app
 
@@ -18,17 +18,15 @@ jobs:
           name: Run Tests
           command: npm test
 
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
-
   build_docker_image:
     docker:
-      - image: circleci/node:14
+      - image: cimg/go:1.17
 
     steps:
       - checkout
+
+      - setup_remote_docker:
+          docker_layer_caching: true
 
       - run:
           name: Build Docker Image
@@ -37,7 +35,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/node:14
+      - image: cimg/go:1.17
 
     working_directory: ~/app
 
