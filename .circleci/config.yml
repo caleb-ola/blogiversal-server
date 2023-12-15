@@ -50,7 +50,7 @@ jobs:
       - run:
           name: Deploy to AWS EC2
           command: |
-            scp -r /workspace/dist ubuntu@your-ec2-instance-ip:/path/to/destination
+            scp -r /workspace/dist ubuntu@54.88.154.225:/production
             # Replace /workspace/dist with the path to your built application files inside the Docker image
             # Replace "ubuntu" with your EC2 instance username
             # Replace "your-ec2-instance-ip" with your EC2 instance IP
