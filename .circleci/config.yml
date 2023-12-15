@@ -30,9 +30,6 @@ jobs:
     steps:
       - checkout
 
-      - attach_workspace:
-          at: /
-
       - run:
           name: Build Docker Image
           command: |
