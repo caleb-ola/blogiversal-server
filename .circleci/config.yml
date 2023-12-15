@@ -47,6 +47,11 @@ jobs:
     steps:
       - checkout
 
+      # Adding SSH keys
+      - add_ssh_keys:
+          fingerprints:
+            - ssh-rsa 2048 SHA256:f6NjADgnNm1RQbMuvD+emI99EELu7S1EjPgGtCpiXtQ
+
       - run:
           name: Deploy to AWS EC2
           command: |
