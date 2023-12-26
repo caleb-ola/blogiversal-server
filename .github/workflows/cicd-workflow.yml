@@ -18,7 +18,7 @@ jobs:
         run: docker build -t blogiversal-server .
 
       - name: Publish image to docker hub
-        run: docker push blogiversal-server:latest
+        run: docker push ${{secrets.DOCKER_USERNAME}}/blogiversal-server:latest
 
   deploy:
     needs: build
