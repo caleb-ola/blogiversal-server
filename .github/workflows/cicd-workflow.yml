@@ -5,6 +5,12 @@ on:
     branches: [main]
 
 jobs:
+  test:
+    runs-on: [self-hosted]
+    steps:
+      - name: checkout source
+        uses: actions/checkout@v3
+
   build:
     runs-on: [self-hosted]
     steps:
